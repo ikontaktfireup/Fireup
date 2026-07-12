@@ -2,146 +2,214 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FireUp – Instrukcje PPOŻ i BHP Warszawa</title>
-  <meta name="description" content="Instrukcje Bezpieczeństwa Pożarowego, BHP, audyty PPOŻ. Czynny strażak PSP. Warszawa i okolice. Szybka realizacja." />
+  <meta name="description" content="Instrukcje Bezpieczeństwa Pożarowego, BHP, audyty PPOŻ i szkolenia. Czynny strażak PSP. Warszawa i okolice. Szybka realizacja." />
+  <meta name="theme-color" content="#0b0b0d" />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-    }
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FireUp – Instrukcje PPOŻ i BHP Warszawa" />
+  <meta property="og:description" content="Instrukcje Bezpieczeństwa Pożarowego, BHP, audyty PPOŻ i szkolenia. Czynny strażak PSP. Warszawa i okolice." />
 
-    header {
-      background: linear-gradient(90deg, #b30000, #ff3b00);
-      padding: 40px 20px;
-      text-align: center;
-    }
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff3b1f' d='M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z'/%3E%3C/svg%3E" />
 
-    header h1 {
-      margin: 0;
-      font-size: 40px;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
 
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: #fff;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-    }
-
-    @media (min-width: 600px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    .card {
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 10px;
-      border-left: 4px solid #ff3b00;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #000;
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    .call {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #ff3b00;
-      color: white;
-      padding: 15px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
 
-<header>
-  <h1>FIRE UP</h1>
-  <p>Instrukcje PPOŻ • BHP • Audyty • Szkolenia</p>
-  <a class="btn" href="tel:601799162">Zadzwoń teraz</a>
-</header>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="#top">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
+        FIRE UP
+      </a>
 
-<section>
-  <h2>Usługi</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Instrukcje Bezpieczeństwa Pożarowego</h3>
-      <p>Opracowanie i aktualizacja IBP zgodnie z przepisami MSWiA.</p>
-    </div>
-    <div class="card">
-      <h3>Audyty PPOŻ</h3>
-      <p>Ocena obiektów i zgodności z przepisami przeciwpożarowymi.</p>
-    </div>
-    <div class="card">
-      <h3>Szkolenia BHP i PPOŻ</h3>
-      <p>Szkolenia praktyczne i teoretyczne dla firm i instytucji.</p>
-    </div>
-    <div class="card">
-      <h3>Próbne ewakuacje</h3>
-      <p>Organizacja i raportowanie działań ewakuacyjnych.</p>
-    </div>
-  </div>
-</section>
+      <ul class="nav-links">
+        <li><a href="#uslugi">Usługi</a></li>
+        <li><a href="#o-mnie">O mnie</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
 
-<section>
-  <h2>Dlaczego FireUp?</h2>
-  <div class="card">
-    <p>
-      Czynny strażak PSP z doświadczeniem operacyjnym i technicznym.
-      Praktyczne podejście do bezpieczeństwa, nie tylko teoria.
-      Działamy na terenie Warszawy i okolic.
-    </p>
-  </div>
-</section>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="#kontakt">Kontakt</a>
+        <a class="btn btn-primary" href="tel:601799162">Zadzwoń</a>
+        <button class="nav-toggle" aria-label="Otwórz menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-<section>
-  <h2>Kontakt</h2>
-  <div class="card">
-    <p><b>Telefon:</b> 601 799 162</p>
-    <p><b>Obszar:</b> Warszawa i okolice</p>
-    <p><b>Godziny:</b> 7:00 – 19:00</p>
-  </div>
-</section>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Bezpieczeństwo pożarowe<br><span>bez kompromisów</span></h1>
+        <p class="lead">
+          Instrukcje Bezpieczeństwa Pożarowego, audyty PPOŻ i szkolenia BHP
+          prowadzone przez czynnego strażaka PSP.
+        </p>
 
-<footer>
-  FireUp © 2026 – Ochrona Przeciwpożarowa i BHP
-</footer>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:601799162">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Zadzwoń teraz
+          </a>
+          <a class="btn btn-ghost" href="#uslugi">Zobacz usługi</a>
+        </div>
 
-<a class="call" href="tel:601799162" aria-label="Zadzwoń do FireUp">📞</a>
+        <ul class="trust-strip">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5z"/></svg>
+            Czynny strażak PSP
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Szybka realizacja
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Warszawa i okolice
+          </li>
+        </ul>
+      </div>
+    </section>
 
+    <section class="section" id="uslugi">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Oferta</span>
+          <h2>Usługi</h2>
+          <p>Kompleksowa obsługa w zakresie ochrony przeciwpożarowej i BHP.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 11h3"/></svg>
+            </div>
+            <h3>Instrukcje Bezpieczeństwa Pożarowego</h3>
+            <p>Opracowanie i aktualizacja IBP zgodnie z przepisami MSWiA.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M9 11h4"/></svg>
+            </div>
+            <h3>Audyty PPOŻ</h3>
+            <p>Ocena obiektów i zgodności z przepisami przeciwpożarowymi.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+            </div>
+            <h3>Szkolenia BHP i PPOŻ</h3>
+            <p>Szkolenia praktyczne i teoretyczne dla firm i instytucji.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+            </div>
+            <h3>Próbne ewakuacje</h3>
+            <p>Organizacja i raportowanie działań ewakuacyjnych.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="o-mnie">
+      <div class="container">
+        <div class="about-grid">
+          <div class="reveal">
+            <span class="about-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5z"/></svg>
+              Czynny strażak PSP
+            </span>
+            <h2>Dlaczego FireUp?</h2>
+            <p>
+              Praktyczne podejście do bezpieczeństwa, nie tylko teoria.
+              Łączę doświadczenie operacyjne i techniczne strażaka PSP
+              z rzetelną, zgodną z przepisami dokumentacją.
+            </p>
+          </div>
+
+          <ul class="about-points reveal">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Doświadczenie operacyjne i techniczne PSP
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Praktyczne, a nie wyłącznie teoretyczne podejście
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Działania zgodne z obowiązującymi przepisami
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              Obsługa na terenie Warszawy i okolic
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Kontakt</span>
+          <h2>Umów się na wycenę</h2>
+          <p>Zadzwoń lub napisz — odpowiadam szybko.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h3>Telefon</h3>
+            <a class="value" href="tel:601799162">601 799 162</a>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>Obszar</h3>
+            <p class="value">Warszawa i okolice</p>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Godziny</h3>
+            <p class="value">7:00 – 19:00</p>
+          </div>
+        </div>
+
+        <div class="contact-cta reveal">
+          <a class="btn btn-primary" href="tel:601799162">Zadzwoń teraz</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    FireUp © 2026 – Ochrona Przeciwpożarowa i BHP
+  </footer>
+
+  <a class="call-float" href="tel:601799162" aria-label="Zadzwoń do FireUp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
