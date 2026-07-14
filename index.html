@@ -31,6 +31,7 @@
 
       <ul class="nav-links">
         <li><a href="#uslugi">Usługi</a></li>
+        <li><a href="#wycena">Wycena</a></li>
         <li><a href="#o-mnie">O mnie</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
@@ -120,6 +121,157 @@
             <p>Organizacja i raportowanie działań ewakuacyjnych.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="wycena">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Kalkulator</span>
+          <h2>Wstępna wycena IBP</h2>
+          <p>Odpowiedz na kilka pytań o obiekt, żeby poznać orientacyjny koszt. Dokładną wycenę potwierdzam zawsze po rozmowie.</p>
+        </div>
+
+        <form class="quote-form reveal" id="quote-form" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Klucz z web3forms.com — patrz README.md, sekcja "Formularz wyceny" -->
+          <input type="hidden" name="access_key" value="f3f50b39-0ba3-43de-8940-6ed32928246f" />
+          <input type="hidden" name="subject" value="Nowe zapytanie o wycenę IBP – FireUp" />
+          <input type="hidden" name="from_name" value="Formularz wyceny IBP – FireUp" />
+          <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="orientacyjna_wycena" id="orientacyjna-wycena" />
+
+          <div class="quote-step" data-step="1">
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Rodzaj obiektu</span>
+                <select name="rodzaj_obiektu" required>
+                  <option value="">Wybierz…</option>
+                  <option value="Mieszkalny wielorodzinny">Mieszkalny wielorodzinny</option>
+                  <option value="Biuro lub lokal usługowy">Biuro lub lokal usługowy</option>
+                  <option value="Obiekt użyteczności publicznej">Obiekt użyteczności publicznej (szkoła, sklep, urząd)</option>
+                  <option value="Hotel, internat lub zamieszkanie zbiorowe">Hotel, internat lub zamieszkanie zbiorowe</option>
+                  <option value="Magazyn lub obiekt produkcyjny">Magazyn lub obiekt produkcyjny</option>
+                  <option value="Inny obiekt">Inny obiekt</option>
+                </select>
+              </label>
+
+              <label class="form-field">
+                <span>Powierzchnia obiektu (m²)</span>
+                <input type="number" name="powierzchnia" min="1" step="1" placeholder="np. 800" required />
+              </label>
+
+              <label class="form-field">
+                <span>Liczba kondygnacji</span>
+                <input type="number" name="kondygnacje" min="1" step="1" placeholder="np. 3" required />
+              </label>
+
+              <label class="form-field">
+                <span>Rodzaj zlecenia</span>
+                <select name="typ_zlecenia" required>
+                  <option value="">Wybierz…</option>
+                  <option value="Nowa IBP">Nowa IBP (od podstaw)</option>
+                  <option value="Aktualizacja istniejącej IBP">Aktualizacja istniejącej IBP</option>
+                </select>
+              </label>
+
+              <label class="form-field">
+                <span>Kategoria zagrożenia ludzi (ZL)</span>
+                <select name="kategoria_zl" id="kategoria-zl" required>
+                  <option value="">Wybierz…</option>
+                  <option value="ZL I / ZL II (szpital, przedszkole, dom opieki)">ZL I / ZL II (szpital, przedszkole, dom opieki)</option>
+                  <option value="ZL III (biuro, sklep, urząd)">ZL III (biuro, sklep, urząd)</option>
+                  <option value="ZL IV (budynek mieszkalny)">ZL IV (budynek mieszkalny)</option>
+                  <option value="ZL V (hotel, internat, zamieszkanie zbiorowe)">ZL V (hotel, internat, zamieszkanie zbiorowe)</option>
+                  <option value="Nie wiem">Nie wiem – podam liczbę osób</option>
+                </select>
+              </label>
+
+              <label class="form-field" id="liczba-osob-field">
+                <span>Liczba osób przebywających w obiekcie</span>
+                <input type="number" name="liczba_osob" min="1" step="1" placeholder="np. 60" />
+              </label>
+            </div>
+
+            <button type="button" class="btn btn-primary quote-calc-btn" id="quote-calc-btn">Oblicz wycenę</button>
+          </div>
+
+          <div class="quote-result" id="quote-result" hidden>
+            <p class="quote-result-label">Orientacyjny koszt opracowania IBP</p>
+            <p class="quote-result-value" id="quote-result-value">—</p>
+            <p class="quote-result-note">To orientacyjne widełki, nie oferta. Ostateczną wycenę potwierdzam po analizie dokumentacji obiektu oraz rozmowie z klientem.</p>
+          </div>
+
+          <div class="quote-step" data-step="2" id="quote-step-2">
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Imię i nazwisko</span>
+                <input type="text" name="imie" placeholder="Jan Kowalski" required />
+              </label>
+
+              <label class="form-field">
+                <span>Telefon</span>
+                <input type="tel" name="telefon" placeholder="601 799 162" required />
+              </label>
+
+              <label class="form-field">
+                <span>Adres e-mail (opcjonalnie)</span>
+                <input type="email" name="email" placeholder="jan@firma.pl" />
+              </label>
+
+              <label class="form-field">
+                <span>Preferowany kontakt</span>
+                <select name="preferowany_kontakt">
+                  <option value="Telefon">Telefon</option>
+                  <option value="E-mail">E-mail</option>
+                </select>
+              </label>
+
+              <label class="form-field">
+                <span>Miejscowość obiektu</span>
+                <input type="text" name="miejscowosc" placeholder="np. Warszawa" />
+              </label>
+
+              <label class="form-field">
+                <span>Czy masz rzuty / dokumentację techniczną?</span>
+                <select name="dokumentacja">
+                  <option value="">Wybierz…</option>
+                  <option value="Tak">Tak, mam rzuty/dokumentację</option>
+                  <option value="Nie">Nie, brak dokumentacji</option>
+                  <option value="Nie wiem">Nie wiem</option>
+                </select>
+              </label>
+
+              <label class="form-field">
+                <span>Czy potrzebna będzie wizja lokalna?</span>
+                <select name="wizja_lokalna">
+                  <option value="">Wybierz…</option>
+                  <option value="Tak">Tak</option>
+                  <option value="Nie, wystarczy zdalnie">Nie, wystarczy zdalnie</option>
+                  <option value="Nie wiem">Nie wiem</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="form-field form-field-full">
+              <span>Opis obiektu / dodatkowe uwagi (opcjonalnie)</span>
+              <textarea name="wiadomosc" rows="3" placeholder="Krótki opis obiektu, adres, termin, dodatkowe uwagi…"></textarea>
+            </label>
+
+            <label class="form-consent">
+              <input type="checkbox" name="zgoda_kontakt" value="Tak" required />
+              <span>Wyrażam zgodę na kontakt w sprawie przygotowania wyceny. Dane zostaną wykorzystane wyłącznie do obsługi zapytania.</span>
+            </label>
+
+            <button type="submit" class="btn btn-primary quote-submit-btn">Wyślij zapytanie o wycenę</button>
+          </div>
+        </form>
+
+        <p class="quote-success" id="quote-success" hidden>
+          Dziękuję za zgłoszenie! Skontaktuję się w celu doprecyzowania wyceny.
+        </p>
+        <p class="quote-error" id="quote-error" hidden>
+          Coś poszło nie tak przy wysyłce. Zadzwoń bezpośrednio: <a href="tel:601799162">601 799 162</a>.
+        </p>
       </div>
     </section>
 

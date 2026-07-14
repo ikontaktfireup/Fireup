@@ -7,9 +7,9 @@ Bez backendu i bez procesu budowania — czysty HTML/CSS/JS.
 ## Struktura
 
 ```
-index.html           strona (nawigacja, hero, usługi, o mnie, kontakt)
+index.html           strona (nawigacja, hero, usługi, wycena, o mnie, kontakt)
 assets/css/style.css  style (design tokens jako CSS custom properties)
-assets/js/main.js     menu mobilne + animacja pojawiania się sekcji przy scrollu
+assets/js/main.js     menu mobilne, animacja przy scrollu, kalkulator wyceny IBP
 ```
 
 ## Podgląd lokalny
@@ -33,6 +33,33 @@ wpisane wprost w `index.html` w sekcji `#kontakt` oraz w przycisku
 przy zmianie numeru trzeba zaktualizować wszystkie wystąpienia
 `tel:601799162`.
 
+## Formularz wyceny (sekcja `#wycena`)
+
+Formularz liczy orientacyjną wycenę IBP na podstawie rodzaju obiektu,
+powierzchni, liczby kondygnacji, typu zlecenia (nowa/aktualizacja) i
+kategorii ZL — logika i stawki (do zmiany na własne) są w
+`assets/js/main.js` w stałych `QUOTE_TYPE_BASE` i `QUOTE_ZL_ADDON`.
+Po wyliczeniu wyceny formularz pokazuje pola kontaktowe i wysyła całość
+(dane o obiekcie + wycenę + kontakt) mailem przez
+[Web3Forms](https://web3forms.com) — darmowy serwis do obsługi
+formularzy na stronach statycznych, bez potrzeby własnego backendu.
+
+Klucz jest już ustawiony w `index.html` (pole `access_key` w sekcji
+`#wycena`). Jeśli trzeba go kiedyś podmienić (np. po rotacji klucza):
+
+1. Wejdź na https://web3forms.com i wygeneruj darmowy Access Key,
+   podając swój e-mail (nie trzeba zakładać konta z hasłem).
+2. W `index.html`, w sekcji `#wycena`, podmień wartość pola
+   `<input type="hidden" name="access_key" ...>` na nowy klucz.
+3. Wyślij testowe zgłoszenie z opublikowanej strony, żeby potwierdzić,
+   że e-mail dochodzi (Web3Forms wysyła link aktywacyjny po pierwszym
+   zgłoszeniu).
+
+Formularz działa też bez JavaScriptu (wysyła się jako zwykły POST i
+przenosi na domyślną stronę z podziękowaniem od Web3Forms) — nie
+pokaże wtedy wyliczonej wyceny, ale kontakt i dane obiektu i tak
+dotrą na maila.
+
 ## Progressive enhancement
 
 Sekcje ze scroll-reveal (klasa `.reveal`) są w pełni widoczne, jeśli
@@ -42,7 +69,7 @@ dopiero po dodaniu klasy `js-anim` do `<html>` przez skrypt
 
 ## Deploy
 
-Repozytorium nie zawiera obecnie konfiguracji hostingu/CI. Strona jest
-w pełni statyczna, więc nadaje się bezpośrednio pod GitHub Pages,
-Cloudflare Pages, Netlify albo dowolny hosting plików statycznych —
-wystarczy wskazać katalog główny repo jako źródło.
+Strona jest opublikowana przez GitHub Pages pod
+https://ikontaktfireup.github.io/Fireup/ — buduje się automatycznie
+z katalogu głównego gałęzi `main` przy każdym pushu, bez dodatkowej
+konfiguracji CI.
