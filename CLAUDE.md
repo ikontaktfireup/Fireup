@@ -9,9 +9,9 @@ FireUp is a static one-page marketing site (Polish) for fire-safety/BHP services
 ## Structure
 
 ```
-index.html            page content (nav, hero, services, quote calculator, about, contact)
+index.html            page content (nav, hero, services, DZPW, quote calculator, about, contact)
 assets/css/style.css   styles — design tokens as CSS custom properties
-assets/js/main.js      mobile nav toggle, scroll-reveal animation, quote form logic
+assets/js/main.js      mobile nav toggle, scroll-reveal animation, IBP quote form logic, DZPW form logic
 ```
 
 There is no bundler, no dependencies, and no test suite — edits are made directly to these three files.
@@ -41,6 +41,10 @@ Client-side-only pricing estimate (rodzaj obiektu / powierzchnia / kondygnacje /
 Editing a step-1 field after a calculation invalidates the result (`invalidateEstimate` in `assets/js/main.js`): it hides `#quote-result`, clears the hidden `orientacyjna_wycena` field, and re-hides the step-2 contact fields until the client recalculates — this prevents submitting a stale estimate that no longer matches the current inputs.
 
 Leads are delivered via [Web3Forms](https://web3forms.com) (no backend): the form POSTs to `https://api.web3forms.com/submit`, carrying a live `access_key` hidden input in `index.html`. JS intercepts submit for an AJAX post + inline success/error message; without JS the form still submits as a native POST and Web3Forms redirects to its own default thank-you page.
+
+## DZPW form (`#dzpw`)
+
+Separate lead-capture form for Dokument Zabezpieczenia przed Wybuchem — deliberately has no pricing calculator (per the site owner: DZPW cost needs individual analysis of the technological process, substances, installations, and explosion hazard zones, so it must never be folded into the IBP calculator). Same delivery pattern as the IBP form (Web3Forms, same `access_key`) but with its own `subject` (`Nowe zapytanie o Dokument Zabezpieczenia przed Wybuchem – FireUp`) and `from_name`, wired independently in `assets/js/main.js` (`#dzpw-formularz` block) — it shares no DOM ids or JS state with `#quote-form`.
 
 ## Deploy
 

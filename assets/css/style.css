@@ -285,6 +285,96 @@ h1, h2, h3 {
   margin: 0;
 }
 
+.card-points {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-points li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.card-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ---------- DZPW section ---------- */
+.dzpw-intro {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.dzpw-intro p {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin: 0 0 16px;
+}
+
+.dzpw-intro p:last-child { margin-bottom: 0; }
+
+.dzpw-objects {
+  max-width: 760px;
+  margin: 44px auto 0;
+}
+
+.dzpw-objects h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.dzpw-objects-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px 24px;
+}
+
+.dzpw-objects-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.dzpw-objects-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.dzpw-objects-note {
+  margin: 20px 0 0;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  font-style: italic;
+}
+
+.dzpw-cta {
+  text-align: center;
+  margin: 40px 0;
+}
+
 /* ---------- About ---------- */
 .about {
   background: var(--bg-alt);
@@ -411,6 +501,46 @@ h1, h2, h3 {
 }
 
 .form-field textarea { resize: vertical; }
+
+.form-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-fieldset legend {
+  padding: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.form-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.form-checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.form-checkbox-group input {
+  accent-color: var(--accent);
+}
+
+.form-disclaimer {
+  max-width: 760px;
+  margin: 24px auto 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
 
 .form-consent {
   display: flex;

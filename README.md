@@ -7,9 +7,9 @@ Bez backendu i bez procesu budowania — czysty HTML/CSS/JS.
 ## Struktura
 
 ```
-index.html           strona (nawigacja, hero, usługi, wycena, o mnie, kontakt)
+index.html           strona (nawigacja, hero, usługi, DZPW, wycena, o mnie, kontakt)
 assets/css/style.css  style (design tokens jako CSS custom properties)
-assets/js/main.js     menu mobilne, animacja przy scrollu, kalkulator wyceny IBP
+assets/js/main.js     menu mobilne, animacja przy scrollu, kalkulator wyceny IBP, formularz DZPW
 ```
 
 ## Podgląd lokalny
@@ -59,6 +59,17 @@ Formularz działa też bez JavaScriptu (wysyła się jako zwykły POST i
 przenosi na domyślną stronę z podziękowaniem od Web3Forms) — nie
 pokaże wtedy wyliczonej wyceny, ale kontakt i dane obiektu i tak
 dotrą na maila.
+
+## Formularz DZPW (sekcja `#dzpw`)
+
+Osobny formularz zapytania o Dokument Zabezpieczenia przed Wybuchem —
+bez kalkulatora, bo cena wymaga indywidualnej analizy procesu
+technologicznego, substancji i stref zagrożenia wybuchem. Wysyła dane
+przez ten sam Web3Forms i ten sam `access_key`, ale z osobnym
+tematem (`subject`) i nadawcą (`from_name`), więc zgłoszenia IBP i
+DZPW łatwo odróżnić w skrzynce. Logika wysyłki (AJAX + fallback bez
+JS) jest analogiczna do formularza wyceny IBP, zdefiniowana osobno w
+`assets/js/main.js`.
 
 ## Progressive enhancement
 

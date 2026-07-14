@@ -169,6 +169,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // DZPW: plain lead-capture form, no calculator — same Web3Forms delivery pattern as #quote-form.
+  const dzpwForm = document.getElementById("dzpw-formularz");
+  if (dzpwForm) {
+    const dzpwSuccess = document.getElementById("dzpw-success");
+    const dzpwError = document.getElementById("dzpw-error");
+    const dzpwSubmitBtn = dzpwForm.querySelector(".dzpw-submit-btn");
+
+    dzpwForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      dzpwError.hidden = true;
+      dzpwSubmitBtn.disabled = true;
+      dzpwSubmitBtn.textContent = "Wysyłanie…";
+
+      try {
+        const response = await fetch(dzpwForm.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(dzpwForm),
+        });
+        const result = await response.json();
+
+        if (!result.success) {
+          throw new Error(result.message || "Wysyłka nieudana");
+        }
+
+        dzpwForm.hidden = true;
+        dzpwSuccess.hidden = false;
+      } catch (err) {
+        dzpwError.hidden = false;
+        dzpwSubmitBtn.disabled = false;
+        dzpwSubmitBtn.textContent = "Wyślij zapytanie o DZPW";
+      }
+    });
+  }
+
   const revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && revealEls.length) {
     const observer = new IntersectionObserver(
